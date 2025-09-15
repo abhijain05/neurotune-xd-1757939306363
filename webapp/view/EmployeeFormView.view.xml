@@ -1,29 +1,69 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mvc:View xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m"
-  xmlns:layout="sap.ui.layout"
-  xmlns:form="sap.ui.layout.form"
-  xmlns:core="sap.ui.core"
-  xmlns:richtexteditor="sap.ui.richtexteditor"
-  xmlns:viz="sap.viz.ui5"
-  controllerName="preview.app.controller.EmployeeFormView"
-  displayBlock="true">
-  <Page title="EmployeeFormView" enableScrolling="true">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+  xmlns:core="sap.ui.core" controllerName="converted.employeeformview.controller.EmployeeFormView" displayBlock="true"
+          xmlns:commons="sap.ui.commons">
+  <Page title="Employee Information" enableScrolling="true">
     <content>
-      <Page id="page_xjlcoiee" title="EmployeeForm">
-        <form:SimpleForm id="simpleform_znv3uwgr" editable="true" layout="ResponsiveGridLayout">
-          <Label id="label_7fnio13j" text="First Name"/>
-          <Input id="input_4vffm2zr" placeholder="First Name" value="{/firstname}"/>
-          <Label id="label_uc5drzfh" text="Last Name"/>
-          <Input id="input_tjqa44uy" placeholder="Last Name" value="{/lastname}"/>
-          <Label id="label_mqh0wvll" text="Email"/>
-          <Input id="input_vf6nmbky" placeholder="Email" value="{/email}"/>
-          <Label id="label_hrsh01f5" text="Department"/>
-          <Input id="input_wqaistwo" placeholder="Department" value="{/department}"/>
-          <Label id="label_r6vjx47w" text="Hire Date"/>
-          <Button id="button_4n1grwrd" text="Save" type="Emphasized"/>
-        </form:SimpleForm>
-      </Page>
+      <form:SimpleForm id="employeeForm" editable="true" layout="ResponsiveGridLayout" title="Employee Details">
+        <form:content>
+          <Label id="labelFirstName" text="First Name" />
+          <Input id="inputFirstName" placeholder="Enter first name" value="{employees>/employees/0/firstName}" />
+          <Label id="labelLastName" text="Last Name" />
+          <Input id="inputLastName" placeholder="Enter last name" value="{employees>/employees/0/lastName}" />
+          <Label id="labelEmail" text="Email" />
+          <Input id="inputEmail" placeholder="Enter email" value="{employees>/employees/0/email}" type="Email" />
+          <Label id="labelDepartment" text="Department" />
+          <Select id="dropdownDepartment" selectedKey="{employees>/employees/0/department}">
+            <core:Item key="Sales" text="Sales" />
+            <core:Item key="Marketing" text="Marketing" />
+            <core:Item key="IT" text="IT" />
+          </Select>
+          <Label id="labelHireDate" text="Hire Date" />
+          <DatePicker id="inputHireDate" value="{employees>/employees/0/hireDate}" displayFormat="yyyy-MM-dd" />
+          <Button id="buttonSave" text="Save" type="Emphasized" press="onSavePress" tooltip="Save employee data" />
+          <Button id="exportButton" text="Export to CSV" press="onExportToCSV" tooltip="Export to CSV" />
+          <SearchField id="searchField" width="100%" search="onSearch" liveChange="onSearch" placeholder="Search Employees" />
+          <Table id="employeeTable" items="{employees>/employees}" growing="true" growingThreshold="5">
+            <columns>
+              <Column id="firstNameColumn">
+                <header>
+                  <Text text="First Name" />
+                </header>
+              </Column>
+              <Column id="lastNameColumn">
+                <header>
+                  <Text text="Last Name" />
+                </header>
+              </Column>
+              <Column id="emailColumn">
+                <header>
+                  <Text text="Email" />
+                </header>
+              </Column>
+              <Column id="departmentColumn">
+                <header>
+                  <Text text="Department" />
+                </header>
+              </Column>
+              <Column id="hireDateColumn">
+                <header>
+                  <Text text="Hire Date" />
+                </header>
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{employees>firstName}" />
+                  <Text text="{employees>lastName}" />
+                  <Text text="{employees>email}" />
+                  <Text text="{employees>department}" />
+                  <Text text="{employees>hireDate}" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </form:content>
+      </form:SimpleForm>
     </content>
   </Page>
 </mvc:View>

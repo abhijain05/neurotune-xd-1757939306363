@@ -1,0 +1,104 @@
+{
+  "customers": [
+    {
+      "customerId": "CUST-10001",
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": "john.smith@example.com",
+      "phone": "555-123-4567",
+      "address": "123 Main St, Anytown, USA",
+      "creationDate": "2023-01-15",
+      "status": "Active"
+    },
+    {
+      "customerId": "CUST-10002",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "email": "alice.johnson@example.com",
+      "phone": "555-987-6543",
+      "address": "456 Oak Ave, Anytown, USA",
+      "creationDate": "2023-02-20",
+      "status": "Inactive"
+    },
+    {
+      "customerId": "CUST-10003",
+      "firstName": "Robert",
+      "lastName": "Williams",
+      "email": "robert.williams@example.com",
+      "phone": "555-222-3333",
+      "address": "789 Pine Ln, Anytown, USA",
+      "creationDate": "2023-03-10",
+      "status": "Active"
+    },
+    {
+      "customerId": "CUST-10004",
+      "firstName": "Emily",
+      "lastName": "Brown",
+      "email": "emily.brown@example.com",
+      "phone": "555-444-5555",
+      "address": "101 Elm Rd, Anytown, USA",
+      "creationDate": "2023-04-05",
+      "status": "Active"
+    },
+    {
+      "customerId": "CUST-10005",
+      "firstName": "Michael",
+      "lastName": "Davis",
+      "email": "michael.davis@example.com",
+      "phone": "555-666-7777",
+      "address": "222 Maple Dr, Anytown, USA",
+      "creationDate": "2023-05-12",
+      "status": "Inactive"
+    },
+    {
+      "customerId": "CUST-10006",
+      "firstName": "Olivia",
+      "lastName": "Wilson",
+      "email": "olivia.wilson@example.com",
+      "phone": "555-888-9999",
+      "address": "333 Cherry St, Anytown, USA",
+      "creationDate": "2023-06-18",
+      "status": "Active"
+    },
+    {
+      "customerId": "CUST-10007",
+      "firstName": "David",
+      "lastName": "Garcia",
+      "email": "david.garcia@example.com",
+      "phone": "555-111-2222",
+      "address": "444 Walnut Ave, Anytown, USA",
+      "creationDate": "2023-07-22",
+      "status": "Active"
+    },
+    {
+      "customerId": "CUST-10008",
+      "firstName": "Sophia",
+      "lastName": "Rodriguez",
+      "email": "sophia.rodriguez@example.com",
+      "phone": "555-333-4444",
+      "address": "555 Oak Ln, Anytown, USA",
+      "creationDate": "2023-08-01",
+      "status": "Inactive"
+    },
+    {
+      "customerId": "CUST-10009",
+      "firstName": "Daniel",
+      "lastName": "Martinez",
+      "email": "daniel.martinez@example.com",
+      "phone": "555-555-6666",
+      "address": "666 Pine Rd, Anytown, USA",
+      "creationDate": "2023-09-15",
+      "status": "Active"
+    },
+    {
+      "customerId": "CUST-10010",
+      "firstName": "Ava",
+      "lastName": "Anderson",
+      "email": "ava.anderson@example.com",
+      "phone": "555-777-8888",
+      "address": "777 Elm St, Anytown, USA",
+      "creationDate": "2023-10-01",
+      "status": "Active"
+    }
+  ]
+}
