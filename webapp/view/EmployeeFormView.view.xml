@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:layout="sap.ui.layout"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
+  xmlns:richtexteditor="sap.ui.richtexteditor"
+  xmlns:viz="sap.viz.ui5"
+  controllerName="preview.app.controller.EmployeeFormView"
+  displayBlock="true">
+  <Page title="EmployeeFormView" enableScrolling="true">
+    <content>
+      <Page id="page_xjlcoiee" title="EmployeeForm">
+        <form:SimpleForm id="simpleform_znv3uwgr" editable="true" layout="ResponsiveGridLayout">
+          <Label id="label_7fnio13j" text="First Name"/>
+          <Input id="input_4vffm2zr" placeholder="First Name" value="{/firstname}"/>
+          <Label id="label_uc5drzfh" text="Last Name"/>
+          <Input id="input_tjqa44uy" placeholder="Last Name" value="{/lastname}"/>
+          <Label id="label_mqh0wvll" text="Email"/>
+          <Input id="input_vf6nmbky" placeholder="Email" value="{/email}"/>
+          <Label id="label_hrsh01f5" text="Department"/>
+          <Input id="input_wqaistwo" placeholder="Department" value="{/department}"/>
+          <Label id="label_r6vjx47w" text="Hire Date"/>
+          <Button id="button_4n1grwrd" text="Save" type="Emphasized"/>
+        </form:SimpleForm>
+      </Page>
+    </content>
+  </Page>
+</mvc:View>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebDynpro xmlns="http://www.sap.com/wd/webdynpro">
+  <View name="EmployeeFormView">
+    <Title>Employee Information Form</Title>
+    <FormContainer id="formContainer">
+      <FormElement id="formElement1">
+        <Label id="labelFirstName" text="First Name"/>
+        <InputField id="inputFirstName" value="{/employee/firstName}"/>
+      </FormElement>
+      <FormElement id="formElement2">
+        <Label id="labelLastName" text="Last Name"/>
+        <InputField id="inputLastName" value="{/employee/lastName}"/>
+      </FormElement>
+      <FormElement id="formElement3">
+        <Label id="labelEmail" text="Email"/>
+        <InputField id="inputEmail" value="{/employee/email}"/>
+      </FormElement>
+      <FormElement id="formElement4">
+        <Label id="labelDepartment" text="Department"/>
+        <DropDownByKey id="dropdownDepartment" key="{/employee/department}" items="{/departments}" text="{/departments/text}"/>
+      </FormElement>
+      <FormElement id="formElement5">
+        <Label id="labelHireDate" text="Hire Date"/>
+        <InputField id="inputHireDate" value="{/employee/hireDate}"/>
+      </FormElement>
+      <!--Added this section as per the assumption that there will be a save button-->
+      <FormElement id="formElement6">
+        <Button id="btnSave" text="Save" press="onSavePress"/>
+      </FormElement>
+    </FormContainer>
+      <MessageArea id="messageArea"/>
+  </View>
+  <Controller name="EmployeeFormViewController">
+    <!-- Methods for UI interaction -->
+    <Method name="onSavePress">
+      <!--Implementation for save action-->
+      <Source>
+        <![CDATA[
+          //Handle save logic here.  This is a placeholder.  Replace with actual code.
+          wdContext.currentContextElement().save();
+          wdComponentAPI.getMessageManager().reportSuccess("Employee data saved successfully!");
+        ]]>
+      </Source>
+    </Method>
+    <!--Method to populate data (example) -->
+    <Method name="wdDoInit">
+      <Source>
+        <![CDATA[
+          //Populate dropdown with department data. This is a placeholder. Replace with actual code.
+          wdContext.nodeDepartments().bind(wdThis.getDepartments());
+          //Initial data population
+          wdContext.nodeEmployee().bind(wdThis.getEmployeeData());
+        ]]>
+      </Source>
+    </Method>
+    <Method name="getDepartments">
+        <Source>
+            <![CDATA[
+            //replace with your actual data retrieval method.  This is a placeholder.
+            return new ArrayList<WDDepartment>();
+            ]]>
+        </Source>
+    </Method>
+    <Method name="getEmployeeData">
+      <Source>
+        <![CDATA[
+          //replace with your actual data retrieval method.  This is a placeholder.  Returns an instance of your employee data object.
+          return new WDEmployee();
+        ]]>
+      </Source>
+    </Method>
+  </Controller>
+</WebDynpro>
